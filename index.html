@@ -4,283 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>App Support — Francisco Delgado</title>
-<meta name="description" content="Support hub for apps by Francisco Delgado. Get help with Sereno, Summit, Vanta, Leap, Flavor, Kept, Planum, Memento, Ledger, Suggestions, Torque, Valise, Meridian, and Relay.">
-<style>
-  :root {
-    --bg: #fafafa;
-    --surface: #ffffff;
-    --text: #17181c;
-    --text-secondary: #5a5e6b;
-    --border: rgba(23, 24, 28, 0.08);
-    --shadow: 0 1px 3px rgba(23, 24, 28, 0.05), 0 8px 24px rgba(23, 24, 28, 0.06);
-    --shadow-hover: 0 2px 6px rgba(23, 24, 28, 0.07), 0 16px 40px rgba(23, 24, 28, 0.12);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0c0d12;
-      --surface: #16181f;
-      --text: #f2f3f7;
-      --text-secondary: #9aa0af;
-      --border: rgba(242, 243, 247, 0.09);
-      --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
-      --shadow-hover: 0 2px 6px rgba(0, 0, 0, 0.35), 0 16px 40px rgba(0, 0, 0, 0.5);
-    }
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .container {
-    max-width: 1020px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ---- Hero ---- */
-  header {
-    padding: 88px 0 64px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-glow {
-    position: absolute;
-    top: -180px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 720px;
-    height: 420px;
-    background: radial-gradient(ellipse at center,
-      rgba(99, 91, 255, 0.22) 0%,
-      rgba(255, 61, 148, 0.12) 45%,
-      transparent 70%);
-    pointer-events: none;
-  }
-  .badge {
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #635bff;
-    background: rgba(99, 91, 255, 0.1);
-    border: 1px solid rgba(99, 91, 255, 0.25);
-    padding: 5px 14px;
-    border-radius: 999px;
-    margin-bottom: 20px;
-  }
-  @media (prefers-color-scheme: dark) {
-    .badge { color: #9d97ff; }
-  }
-  h1 {
-    font-size: clamp(2.4rem, 6vw, 3.6rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
-  h1 .gradient {
-    background: linear-gradient(92deg, #635bff 0%, #b53dff 50%, #ff3d94 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-  .hero-sub {
-    font-size: 1.15rem;
-    color: var(--text-secondary);
-    max-width: 560px;
-    margin: 0 auto 32px;
-  }
-  .hero-cta {
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(92deg, #635bff, #b53dff);
-    padding: 13px 28px;
-    border-radius: 999px;
-    text-decoration: none;
-    box-shadow: 0 4px 16px rgba(99, 91, 255, 0.35);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .hero-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(99, 91, 255, 0.45);
-  }
-
-  /* ---- Section headings ---- */
-  section { padding: 40px 0; }
-  .section-title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 6px;
-  }
-  .section-sub {
-    color: var(--text-secondary);
-    margin-bottom: 28px;
-  }
-
-  /* ---- App grid ---- */
-  .app-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 16px;
-  }
-  .app-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 22px 20px;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .app-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
-  }
-  .app-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
-    flex-shrink: 0;
-  }
-  .app-name {
-    font-size: 1.12rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-  .app-platform {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    margin-top: -12px;
-  }
-  .app-support-link {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #635bff;
-    text-decoration: none;
-    margin-top: auto;
-  }
-  @media (prefers-color-scheme: dark) {
-    .app-support-link { color: #9d97ff; }
-  }
-  .app-support-link:hover { text-decoration: underline; }
-
-  /* Vivid per-app icon gradients */
-  .g-flavor      { background: linear-gradient(135deg, #ff6b35, #ff2d78); }
-  .g-kept        { background: linear-gradient(135deg, #10b981, #059669); }
-  .g-leap        { background: linear-gradient(135deg, #22d3ee, #2563eb); }
-  .g-ledger      { background: linear-gradient(135deg, #f59e0b, #b45309); }
-  .g-memento     { background: linear-gradient(135deg, #f472b6, #a21caf); }
-  .g-meridian    { background: linear-gradient(135deg, #fb7185, #e11d48); }
-  .g-planum      { background: linear-gradient(135deg, #6366f1, #3730a3); }
-  .g-relay       { background: linear-gradient(135deg, #38bdf8, #6d28d9); }
-  .g-sereno      { background: linear-gradient(135deg, #34d399, #0ea5e9); }
-  .g-suggestions { background: linear-gradient(135deg, #facc15, #f97316); }
-  .g-summit      { background: linear-gradient(135deg, #818cf8, #db2777); }
-  .g-torque      { background: linear-gradient(135deg, #fbbf24, #dc2626); }
-  .g-valise      { background: linear-gradient(135deg, #2dd4bf, #0d9488); }
-  .g-vanta       { background: linear-gradient(135deg, #64748b, #1e1b4b); }
-
-  /* ---- FAQ ---- */
-  .faq-list { display: flex; flex-direction: column; gap: 12px; }
-  details {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    box-shadow: var(--shadow);
-    overflow: hidden;
-  }
-  summary {
-    cursor: pointer;
-    font-weight: 600;
-    padding: 18px 22px;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-  }
-  summary::-webkit-details-marker { display: none; }
-  summary::after {
-    content: "+";
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--text-secondary);
-    transition: transform 0.2s ease;
-  }
-  details[open] summary::after { transform: rotate(45deg); }
-  .faq-body {
-    padding: 0 22px 18px;
-    color: var(--text-secondary);
-  }
-  .faq-body a { color: #635bff; font-weight: 600; text-decoration: none; }
-  .faq-body a:hover { text-decoration: underline; }
-  @media (prefers-color-scheme: dark) {
-    .faq-body a { color: #9d97ff; }
-  }
-
-  /* ---- Contact ---- */
-  .contact-card {
-    background: linear-gradient(120deg, #635bff, #b53dff 55%, #ff3d94);
-    border-radius: 22px;
-    padding: 48px 32px;
-    text-align: center;
-    color: #fff;
-  }
-  .contact-card h2 {
-    font-size: 1.7rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    margin-bottom: 10px;
-  }
-  .contact-card p {
-    color: rgba(255, 255, 255, 0.85);
-    max-width: 480px;
-    margin: 0 auto 24px;
-  }
-  .contact-btn {
-    display: inline-block;
-    background: #fff;
-    color: #4438e6;
-    font-weight: 700;
-    padding: 13px 30px;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: transform 0.15s ease;
-  }
-  .contact-btn:hover { transform: translateY(-2px); }
-
-  /* ---- Footer ---- */
-  footer {
-    padding: 40px 0 56px;
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-  }
-  footer a { color: inherit; }
-</style>
+<meta name="description" content="Support hub for apps by Francisco Delgado. Get help with Vanta and see what's coming next.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -298,105 +23,106 @@
 
   <section id="apps">
     <h2 class="section-title">Apps</h2>
-    <p class="section-sub">Every app listed here is supported through the same inbox. Tap “Get support” to start an email with the right subject line.</p>
+    <p class="section-sub">Vanta is available now — tap it for support and its privacy policy. Everything else below is still in development.</p>
     <div class="app-grid">
 
-      <div class="app-card" id="flavor">
-        <div class="app-icon g-flavor">F</div>
-        <div class="app-name">Flavor</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Flavor%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="kept">
-        <div class="app-icon g-kept">K</div>
-        <div class="app-name">Kept</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Kept%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="leap">
-        <div class="app-icon g-leap">L</div>
-        <div class="app-name">Leap</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Leap%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="ledger">
-        <div class="app-icon g-ledger">L</div>
-        <div class="app-name">Ledger</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Ledger%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="memento">
-        <div class="app-icon g-memento">M</div>
-        <div class="app-name">Memento</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Memento%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="meridian">
-        <div class="app-icon g-meridian">M</div>
-        <div class="app-name">Meridian</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Meridian%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="planum">
-        <div class="app-icon g-planum">P</div>
-        <div class="app-name">Planum</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Planum%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="relay">
-        <div class="app-icon g-relay">R</div>
-        <div class="app-name">Relay</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Relay%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="sereno">
-        <div class="app-icon g-sereno">S</div>
-        <div class="app-name">Sereno</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Sereno%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="suggestions">
-        <div class="app-icon g-suggestions">S</div>
-        <div class="app-name">Suggestions</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Suggestions%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="summit">
-        <div class="app-icon g-summit">S</div>
-        <div class="app-name">Summit</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Summit%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="torque">
-        <div class="app-icon g-torque">T</div>
-        <div class="app-name">Torque</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Torque%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="valise">
-        <div class="app-icon g-valise">V</div>
-        <div class="app-name">Valise</div>
-        <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Valise%20Support">Get support →</a>
-      </div>
-
-      <div class="app-card" id="vanta">
+      <a class="app-card" id="vanta" href="vanta.html">
         <div class="app-icon g-vanta">V</div>
         <div class="app-name">Vanta</div>
         <div class="app-platform">iOS</div>
-        <a class="app-support-link" href="mailto:fdelgadosupport@proton.me?subject=Vanta%20Support">Get support →</a>
+        <span class="status-badge available">Available</span>
+        <span class="app-card-cta">Support & privacy →</span>
+      </a>
+
+      <div class="app-card is-unreleased" id="flavor">
+        <div class="app-icon g-flavor">F</div>
+        <div class="app-name">Flavor</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="kept">
+        <div class="app-icon g-kept">K</div>
+        <div class="app-name">Kept</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="leap">
+        <div class="app-icon g-leap">L</div>
+        <div class="app-name">Leap</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="ledger">
+        <div class="app-icon g-ledger">L</div>
+        <div class="app-name">Ledger</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="memento">
+        <div class="app-icon g-memento">M</div>
+        <div class="app-name">Memento</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="meridian">
+        <div class="app-icon g-meridian">M</div>
+        <div class="app-name">Meridian</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="planum">
+        <div class="app-icon g-planum">P</div>
+        <div class="app-name">Planum</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="relay">
+        <div class="app-icon g-relay">R</div>
+        <div class="app-name">Relay</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="sereno">
+        <div class="app-icon g-sereno">S</div>
+        <div class="app-name">Sereno</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="suggestions">
+        <div class="app-icon g-suggestions">S</div>
+        <div class="app-name">Suggestions</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="summit">
+        <div class="app-icon g-summit">S</div>
+        <div class="app-name">Summit</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="torque">
+        <div class="app-icon g-torque">T</div>
+        <div class="app-name">Torque</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
+      </div>
+
+      <div class="app-card is-unreleased" id="valise">
+        <div class="app-icon g-valise">V</div>
+        <div class="app-name">Valise</div>
+        <div class="app-platform">iOS</div>
+        <span class="status-badge unreleased">Unreleased</span>
       </div>
 
     </div>
@@ -408,7 +134,7 @@
     <div class="faq-list">
       <details>
         <summary>How do I get help with an app?</summary>
-        <div class="faq-body">Email <a href="mailto:fdelgadosupport@proton.me">fdelgadosupport@proton.me</a> with the app name in the subject line, or use the “Get support” link on the app’s card above. Please describe what happened, what you expected, and — if possible — the steps to reproduce the issue.</div>
+        <div class="faq-body">Email <a href="mailto:fdelgadosupport@proton.me">fdelgadosupport@proton.me</a> with the app name in the subject line, or open the app's page above and use its "Get support" link. Please describe what happened, what you expected, and — if possible — the steps to reproduce the issue.</div>
       </details>
       <details>
         <summary>How long does it take to get a response?</summary>
