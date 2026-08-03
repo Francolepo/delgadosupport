@@ -45,9 +45,12 @@
       <p>Recital is a practice companion for pianists. It helps you track the pieces you're working on, log practice sessions, view sheet music, record practice takes, and set goals.</p>
 
       <h3>Information We Collect</h3>
-      <p>Recital does not collect, store, sell, or share personal information on any server operated by the developer. There is no developer-run backend.</p>
-      <p>Everything you create in the app — your pieces, practice sessions, goals, notes, imported sheet music, and audio recordings — is stored on your device. If you are signed in to iCloud, this data may also sync to your personal iCloud account (Apple CloudKit) so it stays available across your devices. That data lives in your private iCloud database, which the developer cannot access.</p>
-      <p>If you choose to personalize the app during onboarding (for example your name or an email address), that information is stored locally on your device and is not transmitted to the developer.</p>
+      <p>Everything you create in the app — your pieces, practice sessions, goals, notes, imported sheet music, and audio recordings — is stored on your device. If you are signed in to iCloud, this data may also sync to your personal iCloud account (Apple CloudKit) so it stays available across your devices. That data lives in your private iCloud database, which the developer cannot access. Recital does not sell or share personal information.</p>
+      <p>Personalization entered during onboarding (for example your name) is stored locally on your device.</p>
+
+      <h3>Accounts</h3>
+      <p>Creating an account is optional. If you create one, your email address and a securely hashed password (or your Apple ID credential, if you use Sign in with Apple) are processed and stored by Supabase, the app's authentication provider, solely to let you sign in on your devices. Your plain-text password is never stored. Practice data is not stored on the account server — it stays on your device and in your private iCloud.</p>
+      <p>You can delete your account at any time from Settings → Delete account, which removes the account record from the authentication server and erases all local data. Supabase processes authentication data according to its own privacy policy.</p>
 
       <h3>Microphone</h3>
       <p>Recital asks for microphone access only so you can record audio of your own practice takes. Recordings are saved on your device (and in your private iCloud account if sync is enabled) and are never uploaded to the developer or any third party. You can delete recordings at any time from within the app.</p>
